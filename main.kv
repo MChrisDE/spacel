@@ -1,0 +1,59 @@
+<Game>:
+    canvas:
+        Color:
+            rgb: (0.0859375,0.58203125,0.63671875)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    player: player
+    Controls
+        size_hint: (.18, .32)
+    Player
+        size_hint: (.036, .064)
+        id:player
+
+
+<Player>:
+    canvas:
+        Color:
+            rgb: (0.94921875,0.99609375,0.8828125)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Controls>:
+    canvas:
+        Color:
+            rgb: (0.1328125,0.32421875,0.46875)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+        Line:
+            ellipse: self.pos[0], self.pos[1], self.size[0], self.size[1]
+
+<Wall>:
+    canvas:
+        Color:
+            rgb: (0.9215686274509803,0.4980392156862745,0.0)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<Menu>:
+    Button:
+        pos: (root.width*.5, 0)
+        text: "restart"
+        on_press: app.game.reset()
+        size: (root.width*.25, root.height*0.13)
+        background_normal:''
+        background_color: (0.9215686274509803,0.4980392156862745,0.0,1)
+        font_size: '30sp'
+    Button:
+        pos: (root.width*.75, 0)
+        text: "quit"
+        on_press: app.stop()
+        size: (root.width*.25, root.height*0.13)
+        background_normal:''
+        background_color: (0.9215686274509803,0.4980392156862745,0.0,1)
+        font_size: '30sp'
+
+

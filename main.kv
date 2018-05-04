@@ -20,7 +20,7 @@
     canvas:
         Color:
             rgb: (0.94921875,0.99609375,0.8828125)
-        Rectangle:
+        RoundedRectangle:
             pos: self.pos
             size: self.size
 
@@ -38,27 +38,36 @@
     canvas:
         Color:
             rgb: (0.9215686274509803,0.4980392156862745,0.0)
-        Rectangle:
+        RoundedRectangle:
             pos: self.pos
             size: self.size
+
+<SpeedUp>
+    canvas:
+        Color:
+            rgb: (0.6745098039215687,0.9411764705882353,0.9490196078431372)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
 <Menu>:
     Label:
         halign: 'right'
         valign: 'middle'
-        pos: (root.width*.05, root.height*.75)
+        pos: (root.width*.5, root.height*.75)
         text: "Score: " + str(app.game.score)
         font_size: '30sp'
 
     Label:
         halign: 'right'
         valign: 'middle'
-        pos: (root.width*.05, root.height*.85)
+        pos: (root.width*.5, root.height*.85)
         text: "Highscore: " + str(app.game.json_data["highscore"])
         font_size: '30sp'
 
     Button:
         pos: (root.width*.5, 0)
-        text: "restart"
+        text: "start"
         on_press: app.game.reset()
         size: (root.width*.25, root.height*0.13)
         background_normal:''
